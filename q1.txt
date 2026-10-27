@@ -1,0 +1,8 @@
+install 
+
+1. npm i typescript
+
+run 
+
+1. tsc filename.ts
+2. node filename.js

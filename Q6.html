@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form</h1>
+    Name :
+    <input id="name" type="text"><br>
+    Price :
+    <input id="price" type="text"><br>
+    Quantity:
+    <input id="quantity" type="text"><br>
+    <button id="b1"> Submit</button>
+
+
+    <script>
+        const b1 = document.getElementById("b1")
+        b1.addEventListener("click", () => {
+            const name = document.getElementById("name").value
+            const price = document.getElementById("price").value
+            const quantity = document.getElementById("quantity").value
+            if (name.length < 1) {
+                alert("name should not be empty!")
+                return
+            } else if (price <= 0) {
+                alert("give a positive number")
+                return
+            }else{
+                alert("validation successfull")
+                const ob = {
+                    "Name":name,
+                    "Price" : price,
+                    "Quantity":quantity
+                }
+                localStorage.setItem("data",JSON.stringify(ob))
+            }
+        })
+
+    </script>
+
+</body>
+
+</html>
